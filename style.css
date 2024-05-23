@@ -43,6 +43,8 @@ p {
   top: 0; /* Position it at the top */
   width: 100%; /* Make it span the full width */
   z-index: 1000; /* Ensure it stays above other content */
+  transition: top 0.3s ease;
+
 }
 
 .navContainer a {
@@ -91,8 +93,8 @@ p {
 
 .intro-image {
   position: relative;
-  height: 250px;
-  width: 250px;
+  height: 500px;
+  width: 500px;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -210,14 +212,20 @@ p {
 }
 
 .hydrohero {
+  margin-top: 20px; 
   border: 3px solid #ececec;
-  padding: 50px;
+  padding: 20px;
   background: #fff;
-  border-radius: 16px;
+  border-radius: 100px;
   text-align: center;
   display: flex; 
   flex-direction: column; 
   justify-content: center; 
+}
+
+.hydrohero:hover {
+  transform: scale(1.05); /* Adjust the scale factor as needed */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
 }
 
 .center {

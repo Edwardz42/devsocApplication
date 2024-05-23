@@ -11,11 +11,11 @@
       integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
       crossorigin="anonymous"
     />
-    <title>My Portfolio</title>
+    <title>Edward Zhang Website</title>
   </head>
   <body>
     <!-- Navbar -->
-    <div class="navContainer">
+    <div class="navContainer" id="navbar">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#hobbies">Hobbies</a>
@@ -51,6 +51,7 @@
     <div class="skillsContainer" id="skills">
       <h1>My Skills</h1>
       <span>Rated from 1 to 10</span>
+      <br>
       <div class="skillsItemsContainer">
         <div class="skillItem">
           <p>C</p>
@@ -117,30 +118,53 @@
     <div class="skillsContainer" id="projects">
       <h1>My Projects</h1>
       <div class="hydrohero">
-        <h3><a href="https://drive.google.com/drive/folders/1QBUAh7DSE2KgsltujvaiTC0J8FhuMHel" target="_blank">HydroHero !!!!!!</a></h3>
+        <h3>
+          HydroHero !!!!!
+        </h3>
         <p>
           Top down rougelike similar to vampire survivors<br>
           (All sprites made by me &#x1F525;) 
         </p>
-        <img src="images/hydrohero.png" alt="HydroHero Image", width = "300", height = "300", class = "center">
-        <h4>Made using Godot/GDScript</h4>
+        <a href="https://drive.google.com/drive/folders/1QBUAh7DSE2KgsltujvaiTC0J8FhuMHel" target="_blank">
+          <img src="images/hydrohero.png" alt="HydroHero Image" width="300" height="300" class="center">
+        </a>
+        <h4>Click image to download &#x1F44D;</h2>
       </div>
+      
     </div>
 
     <!-- footer -->
-    <div class="blueParent" id="projects">
+    <div class="blueParent">
       <div class="footer">
         <div class="socials">
           <a href="https://www.linkedin.com/in/edward-zhang-4046b829a/" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/Edwardz42" target="_blank"><i class="fab fa-github"></i></a>
           <a href="mailto:edwardzhang42@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-
         </div>
         <p class="center">
           Edward Zhang 2024 <br>
           Psst... Hover over my face for a secret :>
         </p>
       </div>
-    <div>
+    </div>
+
+    <script>
+      let lastScrollTop = 0;
+      const navbar = document.querySelector('.navContainer');
+
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (scrollTop > lastScrollTop) {
+          // Downscroll
+          navbar.style.top = '-100px'; // Adjust as needed to hide the navbar
+        } else {
+          // Upscroll
+          navbar.style.top = '0';
+        }
+
+        lastScrollTop = scrollTop;
+      });
+    </script>
   </body>
 </html>
