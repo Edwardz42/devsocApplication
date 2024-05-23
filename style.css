@@ -121,7 +121,6 @@ p {
   display: none;
 }
 
-/* Skills section styles */
 .skillsContainer {
   padding: 80px;
   display: flex;
@@ -187,7 +186,6 @@ p {
   background-color: #3e64ff;
 }
 
-/* Projects section styles */
 .projectsContainer {
   padding: 80px;
   display: flex;
@@ -224,8 +222,8 @@ p {
 }
 
 .hydrohero:hover {
-  transform: scale(1.05); /* Adjust the scale factor as needed */
-  transition: transform 0.3s ease; /* Add a smooth transition effect */
+  transform: scale(1.05);
+  transition: transform 0.3s ease; 
 }
 
 .center {
