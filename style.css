@@ -1,5 +1,7 @@
+/* Importing font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap");
 
+/* Global styles */
 html {
   scroll-behavior: smooth;
 }
@@ -31,29 +33,37 @@ p {
   margin: 0;
 }
 
+/* Navbar styles */
 .navContainer {
-  background: rgba(62, 100, 255, 0.1);
+  background: rgba(45, 76, 199, 0.772);
   padding: 20px;
   display: flex;
   justify-content: flex-end;
+  position: fixed; /* Make navbar fixed */
+  top: 0; /* Position it at the top */
+  width: 100%; /* Make it span the full width */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
 .navContainer a {
   text-decoration: none;
   font-size: 18px;
   margin-right: 50px;
-  color: #000000;
+  color: #ffffff;
 }
 
+/* Section backgrounds */
 .blueParent {
   background: rgba(62, 100, 255, 0.1);
 }
 
+/* Intro section styles */
 .introContainer {
   display: flex;
   padding: 120px 80px;
   max-width: 1100px;
   margin: auto;
+  padding-top: 160px; /* Adjusted for fixed navbar */
 }
 
 .intro-content {
@@ -64,6 +74,7 @@ p {
   max-width: 500px;
   margin-bottom: 50px;
 }
+
 .intro-content p {
   max-width: 500px;
   margin-bottom: 50px;
@@ -108,7 +119,7 @@ p {
   display: none;
 }
 
-
+/* Skills section styles */
 .skillsContainer {
   padding: 80px;
   display: flex;
@@ -174,6 +185,7 @@ p {
   background-color: #3e64ff;
 }
 
+/* Projects section styles */
 .projectsContainer {
   padding: 80px;
   display: flex;
@@ -212,6 +224,7 @@ p {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  text-align: center;
 }
 
 .project {
@@ -254,6 +267,7 @@ p {
   margin-top: 20px;
 }
 
+/* Footer styles */
 .footer {
   padding: 20px;
   display: flex;
@@ -261,6 +275,7 @@ p {
   align-items: center;
   flex-direction: column;
 }
+
 .socials {
   margin-bottom: 10px;
 }
