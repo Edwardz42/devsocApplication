@@ -37,9 +37,9 @@
           </p>
         </div>
         <div class="intro-image">
-          <img src="images/meimg.jpg" alt="profile-image" class="normal-image" />
-          <img src="images/globe gif.gif" alt="profile-image-hover" class="hover-image" />
-        </div>
+          <img src="images/meimg.jpg" alt="profile-image" class="normal-image" data-discord-image="images/eviledward.png" />
+          <img src="images/globe gif.gif" alt="profile-image-hover" class="hover-image" data-discord-image="images/evilgif.gif" />
+        </div>        
       </div>
     </div>
 
@@ -49,25 +49,33 @@
       <span id="skills-span">Rated from 1 to 10</span>
       <br>
       <div class="skillsItemsContainer">
-        <div class="skillItem">
+        <div class="skillItem"
+              data-harmony-text="C" 
+              data-discord-text="Beating up people (in minecraft)" >
           <p>C</p>
           <div class="outerdiv">
             <div class="cdiv"></div>
           </div>
         </div>
-        <div class="skillItem">
+        <div class="skillItem"
+              data-harmony-text="Yapping" 
+              data-discord-text="Missle creation (in minecraft)" >
           <p>Yapping</p>
           <div class="outerdiv">
             <div class="yapdiv"></div>
           </div>
         </div>
-        <div class="skillItem">
+        <div class="skillItem"
+              data-harmony-text="Doing Mobius" 
+              data-discord-text="Mass species eradication (in minecraft)" >
           <p>Doing Mobius</p>
           <div class="outerdiv">
             <div class="mobdiv"></div>
           </div>
         </div>
-        <div class="skillItem">
+        <div class="skillItem"
+              data-harmony-text="Following themes" 
+              data-discord-text="League of Legends" >
           <p>Following themes</p>
           <div class="outerdiv">
             <div class="mobcdiv"></div>
@@ -83,50 +91,50 @@
     <h1 id="gamesHobbiesTitle">My Games / Hobbies</h1>
     <div class="projectItemsContainer">
       <div class="project" 
-           data-light-image="images/coc.png" 
-           data-dark-image="images/lol.jpg" 
-           data-light-text="Clash of Clans" 
-           data-dark-text="League of Legends" 
+           data-harmony-image="images/coc.png" 
+           data-discord-image="images/lol.jpg" 
+           data-harmony-text="Clash of Clans" 
+           data-discord-text="League of Legends" 
            style="background-image: url('images/coc.png'); background-size: cover; background-position: center;">
         <h3>Clash of Clans</h3>
       </div>
       <div class="project" 
-           data-light-image="images/lol.jpg" 
-           data-dark-image="images/lol.jpg" 
-           data-light-text="League of Legends" 
-           data-dark-text="League of Legends" 
+           data-harmony-image="images/lol.jpg" 
+           data-discord-image="images/lol.jpg" 
+           data-harmony-text="League of Legends" 
+           data-discord-text="League of Legends" 
            style="background-image: url('images/lol.jpg'); background-size: cover; background-position: center;">
         <h3>League of Legends</h3>
       </div>
       <div class="project" 
-           data-light-image="images/minecraft.gif" 
-           data-dark-image="images/lol.jpg" 
-           data-light-text="Minecraft" 
-           data-dark-text="League of Legends" 
+           data-harmony-image="images/minecraft.gif" 
+           data-discord-image="images/lol.jpg" 
+           data-harmony-text="Minecraft" 
+           data-discord-text="League of Legends" 
            style="background-image: url('images/minecraft.gif'); background-size: cover; background-position: center;">
         <h3>Minecraft</h3>
       </div>
       <div class="project" 
-           data-light-image="images/singing.gif" 
-           data-dark-image="images/lol.jpg" 
-           data-light-text="Karaoke" 
-           data-dark-text="League of Legends" 
+           data-harmony-image="images/singing.gif" 
+           data-discord-image="images/lol.jpg" 
+           data-harmony-text="Karaoke" 
+           data-discord-text="League of Legends" 
            style="background-image: url('images/singing.gif'); background-size: cover; background-position: center;">
         <h3>Karaoke</h3>
       </div>
       <div class="project" 
-           data-light-image="images/terraria.gif" 
-           data-dark-image="images/lol.jpg" 
-           data-light-text="Terraria" 
-           data-dark-text="League of Legends" 
+           data-harmony-image="images/terraria.gif" 
+           data-discord-image="images/lol.jpg" 
+           data-harmony-text="Terraria" 
+           data-discord-text="League of Legends" 
            style="background-image: url('images/terraria.gif'); background-size: cover; background-position: center;">
         <h3>Terraria</h3>
       </div>
       <div class="project" 
-           data-light-image="images/cards.gif" 
-           data-dark-image="images/lol.jpg" 
-           data-light-text="Cardistry" 
-           data-dark-text="League of Legends" 
+           data-harmony-image="images/cards.gif" 
+           data-discord-image="images/lol.jpg" 
+           data-harmony-text="Cardistry" 
+           data-discord-text="League of Legends" 
            style="background-image: url('images/cards.gif'); background-size: cover; background-position: center;">
         <h3>Cardistry</h3>
       </div>
@@ -143,48 +151,66 @@
     <script>
       const themeSwitcher = document.getElementById('themeSwitcher');
       const body = document.body;
+      const skills = document.querySelectorAll('.skillItem');
       const projects = document.querySelectorAll('.project');
       const title = document.getElementById('gamesHobbiesTitle');
       const introHeader = document.getElementById('intro-header');
       const introParagraph = document.getElementById('intro-paragraph');
       const skillsHeader = document.getElementById('skills-header');
       const skillsSpan = document.getElementById('skills-span');
-          
+      const normalImage = document.querySelector('.normal-image');
+      const hoverImage = document.querySelector('.hover-image');
+
       themeSwitcher.addEventListener('click', () => {
-        // Toggle dark theme class
-        body.classList.toggle('dark-theme');
+        // Toggle discord theme class
+        body.classList.toggle('discord-theme');
     
         // Change button text
-        if (body.classList.contains('dark-theme')) {
+        if (body.classList.contains('discord-theme')) {
           themeSwitcher.textContent = 'Switch to Harmony';
     
-          // Change project images and text to dark theme content
+          // Change project images and text to discord theme content
           projects.forEach((project) => {
-            project.style.backgroundImage = `url('${project.getAttribute('data-dark-image')}')`;
-            project.querySelector('h3').textContent = project.getAttribute('data-dark-text');
+            project.style.backgroundImage = `url('${project.getAttribute('data-discord-image')}')`;
+            project.querySelector('h3').textContent = project.getAttribute('data-discord-text');
           });
-    
-          // Change the title text for dark theme
-          title.textContent = 'My Evil Hobbies';      
+
+          // Change skill images and text to discord theme content
+          skills.forEach((skill) => {
+            skill.querySelector('p').textContent = skill.getAttribute('data-discord-text');
+          });
+
+          // Change the title text for discord theme
           introHeader.textContent = "Now i am evil";
-        introParagraph.innerHTML = "";
-        skillsHeader.textContent = "My Evil Skills";
-        skillsSpan.textContent = "";
+          introParagraph.innerHTML = "(insert evil laugh / monologue [also hover over my face for a different gif])";
+          skillsHeader.textContent = "My Criminal Proficiency";
+          skillsSpan.textContent = "Still rated from 1 to 10";
+          title.textContent = 'My Evil Hobbies';
+          normalImage.src = normalImage.getAttribute('data-discord-image');
+          hoverImage.src = hoverImage.getAttribute('data-discord-image');    
+  
         } else {
           themeSwitcher.textContent = 'Switch to Discord';
     
-          // Revert project images and text to light theme content
+          // Revert project images and text to harmony theme content
           projects.forEach((project) => {
-            project.style.backgroundImage = `url('${project.getAttribute('data-light-image')}')`;
-            project.querySelector('h3').textContent = project.getAttribute('data-light-text');
+            project.style.backgroundImage = `url('${project.getAttribute('data-harmony-image')}')`;
+            project.querySelector('h3').textContent = project.getAttribute('data-harmony-text');
           });
 
-          // Reset text for light theme
-          title.textContent = 'My Games / Hobbies';
+          // Change skill images and text to harmony theme content
+          skills.forEach((skill) => {
+            skill.querySelector('p').textContent = skill.getAttribute('data-discord-text');
+          });
+
+          // Reset text for harmony theme
           introHeader.textContent = "Hi, I'm Edward Zhang!";
           introParagraph.innerHTML = "I'm a 1st year Actuarial Studies / Computer Science with the greatest online name ever (Chezburger4lyfe). I'm a big gamer but I also enjoy touching grass sometimes! <br><br> I'm still new to html/css/Javascript but I'm eager to learn more front end so my portfolio website (probably this one lmao) won't look like it's from the 1990s &#x1F480;.";
           skillsHeader.textContent = "My Skills";
           skillsSpan.textContent = "Rated from 1 to 10";
+          title.textContent = 'My Games / Hobbies';
+          normalImage.src = 'images/meimg.jpg';
+          hoverImage.src = 'images/globe gif.gif';
         }
       });
     </script>

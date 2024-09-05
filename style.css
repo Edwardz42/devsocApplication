@@ -294,29 +294,29 @@ p {
   background-color: #2d4cc7;
 }
 
-/* Dark Theme Styles */
-body.dark-theme {
+/* discord Theme Styles */
+body.discord-theme {
   background-color: #121212;
   color: #ffffff;
 }
 
-body.dark-theme .navContainer {
+body.discord-theme .navContainer {
   background: rgba(255, 255, 255, 0.1);
 }
 
-body.dark-theme a {
+body.discord-theme a {
   color: #ffffff;
 }
 
-body.dark-theme .intro-content a {
+body.discord-theme .intro-content a {
   background: #ffffff;
   color: #121212;
 }
 
-body.dark-theme .project {
+body.discord-theme .project {
   border: 3px solid #ffffff;
 }
 
-body.dark-theme .footer {
+body.discord-theme .footer {
   background-color: #1c1c1c;
 }
