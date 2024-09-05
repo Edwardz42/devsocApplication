@@ -26,31 +26,27 @@
     <div class="blueParent" id="about">
       <div class="introContainer">
         <div class="intro-content">
-          <h1>Hi, I'm Edward Zhang!</h1>
-          <p>
+          <h1 id="intro-header">Hi, I'm Edward Zhang!</h1>
+          <p id="intro-paragraph">
             I'm a 1st year Actuarial Studies / Computer Science with the greatest
             online name ever (Chezburger4lyfe). I'm a big gamer but I also enjoy 
             touching grass sometimes! 
-
-             <br><br>
-
+            <br><br>
             I'm still new to html/css/Javascript but I'm eager to learn more front end 
             so my portfolio website (probably this one lmao) won't look like it's from the 1990s &#x1F480;. 
-
           </p>
         </div>
         <div class="intro-image">
           <img src="images/meimg.jpg" alt="profile-image" class="normal-image" />
           <img src="images/globe gif.gif" alt="profile-image-hover" class="hover-image" />
         </div>
-        
       </div>
     </div>
 
-    <!-- skills section -->
+    <!-- Skills Section -->
     <div class="skillsContainer" id="skills">
-      <h1>My Skills</h1>
-      <span>Rated from 1 to 10</span>
+      <h1 id="skills-header">My Skills</h1>
+      <span id="skills-span">Rated from 1 to 10</span>
       <br>
       <div class="skillsItemsContainer">
         <div class="skillItem">
@@ -77,9 +73,9 @@
             <div class="mobcdiv"></div>
           </div>
         </div>
-
       </div>
     </div>
+
 
 <!-- Projects Section -->
 <div class="blueParent" id="hobbies">
@@ -149,7 +145,11 @@
       const body = document.body;
       const projects = document.querySelectorAll('.project');
       const title = document.getElementById('gamesHobbiesTitle');
-    
+      const introHeader = document.getElementById('intro-header');
+      const introParagraph = document.getElementById('intro-paragraph');
+      const skillsHeader = document.getElementById('skills-header');
+      const skillsSpan = document.getElementById('skills-span');
+          
       themeSwitcher.addEventListener('click', () => {
         // Toggle dark theme class
         body.classList.toggle('dark-theme');
@@ -165,7 +165,11 @@
           });
     
           // Change the title text for dark theme
-          title.textContent = 'My Evil Hobbies';
+          title.textContent = 'My Evil Hobbies';      
+          introHeader.textContent = "Now i am evil";
+        introParagraph.innerHTML = "";
+        skillsHeader.textContent = "My Evil Skills";
+        skillsSpan.textContent = "";
         } else {
           themeSwitcher.textContent = 'Switch to Discord';
     
@@ -174,9 +178,13 @@
             project.style.backgroundImage = `url('${project.getAttribute('data-light-image')}')`;
             project.querySelector('h3').textContent = project.getAttribute('data-light-text');
           });
-    
-          // Revert the title text for light theme
+
+          // Reset text for light theme
           title.textContent = 'My Games / Hobbies';
+          introHeader.textContent = "Hi, I'm Edward Zhang!";
+          introParagraph.innerHTML = "I'm a 1st year Actuarial Studies / Computer Science with the greatest online name ever (Chezburger4lyfe). I'm a big gamer but I also enjoy touching grass sometimes! <br><br> I'm still new to html/css/Javascript but I'm eager to learn more front end so my portfolio website (probably this one lmao) won't look like it's from the 1990s &#x1F480;.";
+          skillsHeader.textContent = "My Skills";
+          skillsSpan.textContent = "Rated from 1 to 10";
         }
       });
     </script>
