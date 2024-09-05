@@ -16,7 +16,6 @@ body {
 h1 {
   font-size: 56px;
   line-height: 56px;
-  color: #21243d;
   margin: 0;
 }
 
@@ -29,7 +28,6 @@ h3 {
 p {
   font-size: 18px;
   line-height: 26px;
-  color: #625e5e;
   margin: 0;
 }
 
@@ -209,23 +207,6 @@ p {
   grid-gap: 80px;
 }
 
-.hydrohero {
-  margin-top: 20px; 
-  border: 3px solid #ececec;
-  padding: 20px;
-  background: #fff;
-  border-radius: 100px;
-  text-align: center;
-  display: flex; 
-  flex-direction: column; 
-  justify-content: center; 
-}
-
-.hydrohero:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease; 
-}
-
 .center {
   display: block;
   margin-left: auto;
@@ -290,4 +271,52 @@ p {
   font-size: 25px;
   color: black;
   margin-right: 20px;
+}
+
+/* Theme Switcher */
+.HarmonyToDiscord {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.theme-switcher {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3e64ff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.theme-switcher:hover {
+  background-color: #2d4cc7;
+}
+
+/* Dark Theme Styles */
+body.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-theme .navContainer {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-theme a {
+  color: #ffffff;
+}
+
+body.dark-theme .intro-content a {
+  background: #ffffff;
+  color: #121212;
+}
+
+body.dark-theme .project {
+  border: 3px solid #ffffff;
+}
+
+body.dark-theme .footer {
+  background-color: #1c1c1c;
 }

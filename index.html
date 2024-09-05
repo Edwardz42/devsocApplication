@@ -81,57 +81,105 @@
       </div>
     </div>
 
-    <!-- projects  -->
-    <div class="blueParent" id="hobbies">
-      <div class="projectsContainer">
-        <h1>My Games / Hobbies</h1>
-        <div class="projectItemsContainer">
-
-          <div class="project" style="background-image: url('images/coc.png'); background-size: cover; background-position: center;">
-            <h3>Clash of Clans</h3>
-          </div>
-
-          <div class="project" style="background-image: url('images/lol.jpg'); background-size: cover; background-position: center;">
-            <h3>League of Legends</h3>
-          </div>
-
-          <div class="project" style="background-image: url('images/minecraft.gif'); background-size: cover; background-position: center;">
-            <h3>Minecraft</h3>
-          </div>
-
-          <div class="project" style="background-image: url('images/singing.gif'); background-size: cover; background-position: center;">
-            <h3>Karaoke</h3>
-          </div>
-          <div class="project" style="background-image: url('images/terraria.gif'); background-size: cover; background-position: center;">
-            <h3>Terraria</h3>
-          </div>
-
-          <div class="project" style="background-image: url('images/cards.gif'); background-size: cover; background-position: center;">
-            <h3>Cardistry</h3>
-          </div>
-        </div>
-
-
+<!-- Projects Section -->
+<div class="blueParent" id="hobbies">
+  <div class="projectsContainer">
+    <h1 id="gamesHobbiesTitle">My Games / Hobbies</h1>
+    <div class="projectItemsContainer">
+      <div class="project" 
+           data-light-image="images/coc.png" 
+           data-dark-image="images/lol.jpg" 
+           data-light-text="Clash of Clans" 
+           data-dark-text="League of Legends" 
+           style="background-image: url('images/coc.png'); background-size: cover; background-position: center;">
+        <h3>Clash of Clans</h3>
+      </div>
+      <div class="project" 
+           data-light-image="images/lol.jpg" 
+           data-dark-image="images/lol.jpg" 
+           data-light-text="League of Legends" 
+           data-dark-text="League of Legends" 
+           style="background-image: url('images/lol.jpg'); background-size: cover; background-position: center;">
+        <h3>League of Legends</h3>
+      </div>
+      <div class="project" 
+           data-light-image="images/minecraft.gif" 
+           data-dark-image="images/lol.jpg" 
+           data-light-text="Minecraft" 
+           data-dark-text="League of Legends" 
+           style="background-image: url('images/minecraft.gif'); background-size: cover; background-position: center;">
+        <h3>Minecraft</h3>
+      </div>
+      <div class="project" 
+           data-light-image="images/singing.gif" 
+           data-dark-image="images/lol.jpg" 
+           data-light-text="Karaoke" 
+           data-dark-text="League of Legends" 
+           style="background-image: url('images/singing.gif'); background-size: cover; background-position: center;">
+        <h3>Karaoke</h3>
+      </div>
+      <div class="project" 
+           data-light-image="images/terraria.gif" 
+           data-dark-image="images/lol.jpg" 
+           data-light-text="Terraria" 
+           data-dark-text="League of Legends" 
+           style="background-image: url('images/terraria.gif'); background-size: cover; background-position: center;">
+        <h3>Terraria</h3>
+      </div>
+      <div class="project" 
+           data-light-image="images/cards.gif" 
+           data-dark-image="images/lol.jpg" 
+           data-light-text="Cardistry" 
+           data-dark-text="League of Legends" 
+           style="background-image: url('images/cards.gif'); background-size: cover; background-position: center;">
+        <h3>Cardistry</h3>
       </div>
     </div>
-    <!-- projects  -->
-    <div class="skillsContainer" id="projects">
-      <h1>My Projects</h1>
-      <div class="hydrohero">
-        <h3>
-          HydroHero !
-        </h3>
-        <p>
-          Top down rougelike similar to vampire survivors<br>
-          (All sprites made by me &#x1F525;) 
-        </p>
-        <a href="https://drive.google.com/drive/folders/1QBUAh7DSE2KgsltujvaiTC0J8FhuMHel" target="_blank">
-          <img src="images/hydrohero.png" alt="HydroHero Image" width="300" height="300" class="center">
-        </a>
-        <h4>Click image to download &#x1F44D;</h2>
-      </div>
-      
+  </div>
+</div>
+
+    
+    <!-- Evil button -->
+    <div class="HarmonyToDiscord">
+      <button id="themeSwitcher" class="theme-switcher">Switch to Discord</button>
     </div>
+
+    <script>
+      const themeSwitcher = document.getElementById('themeSwitcher');
+      const body = document.body;
+      const projects = document.querySelectorAll('.project');
+      const title = document.getElementById('gamesHobbiesTitle');
+    
+      themeSwitcher.addEventListener('click', () => {
+        // Toggle dark theme class
+        body.classList.toggle('dark-theme');
+    
+        // Change button text
+        if (body.classList.contains('dark-theme')) {
+          themeSwitcher.textContent = 'Switch to Harmony';
+    
+          // Change project images and text to dark theme content
+          projects.forEach((project) => {
+            project.style.backgroundImage = `url('${project.getAttribute('data-dark-image')}')`;
+            project.querySelector('h3').textContent = project.getAttribute('data-dark-text');
+          });
+    
+          // Change the title text for dark theme
+          title.textContent = 'My Evil Hobbies';
+        } else {
+          themeSwitcher.textContent = 'Switch to Discord';
+    
+          // Revert project images and text to light theme content
+          projects.forEach((project) => {
+            project.style.backgroundImage = `url('${project.getAttribute('data-light-image')}')`;
+            project.querySelector('h3').textContent = project.getAttribute('data-light-text');
+          });
+    
+          // Revert the title text for light theme
+          title.textContent = 'My Games / Hobbies';
+        }
+      });
+    </script>
 
     <!-- footer -->
     <div class="blueParent">
@@ -166,5 +214,6 @@
         lastScrollTop = scrollTop;
       });
     </script>
+    
   </body>
 </html>
